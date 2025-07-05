@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'account',
     'category',
     'stock',
+    'carts',
 ]
 
 MIDDLEWARE = [
@@ -66,7 +67,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'category.context_processors.menu_links'
+                'category.context_processors.menu_links',
+                'carts.context_processors.counter',
             ],
         },
     },
@@ -133,4 +135,21 @@ MEDIA_ROOT=BASE_DIR/'media/'
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+
+
+from django.contrib.messages import constants as messages
+
+MESSAGE_TAGS = {
+    messages.ERROR:'danger',
+
+}
+
+
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'itphld@gmail.com'
+EMAIL_HOST_PASSWORD = 'tmgl mxbn pdjz dkrh'
+
+EMAIL_PORT = 587

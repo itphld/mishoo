@@ -39,7 +39,11 @@ $(document).ready(function() {
 });
 // jquery end
 </script>
-
+<script>
+setTimeout(function(){
+  $('#alertmsg').fadeOut('slow')
+}, 2000)
+</script>
 </head>
 <body>
 {%include 'include/nav.html'%}
